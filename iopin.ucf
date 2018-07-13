@@ -1,0 +1,109 @@
+# ------------------------------------------------------
+# Pinbelegung Basys2-100 rev C board
+# ------------------------------------------------------
+# alle I/O-Pins sind rauskommentiert (mit #)
+# Format: NET "<pinname>" LOC="<icpin>";
+#         <pinname> anpassen
+#         <icpin> nicht aendern
+# ------------------------------------------------------
+
+# ------------------------------------------------------
+# Takteingaenge
+# ------------------------------------------------------
+# ---50 MHz-Takt---
+# NET "clk50" LOC = "B8"; 
+# NET "clk50" CLOCK_DEDICATED_ROUTE = FALSE; 
+
+# ---Extra-Takt (IC-Sockel)---
+# NET "clkextra" LOC = "M6"; 
+# NET "clkextra" CLOCK_DEDICATED_ROUTE = FALSE;
+
+# ------------------------------------------------------
+# Schalter x7...x0     Tasten t3...t0 
+# ------------------------------------------------------
+# NET "x7" LOC = "N3";  
+# NET "x6" LOC = "E2";  
+# NET "x5" LOC = "F3";  
+# NET "x4" LOC = "G3";  
+ NET "x3" LOC = "B4";  
+ NET "x2" LOC = "K3";  
+ NET "x1" LOC = "L3";  
+ NET "x0" LOC = "P11";  
+
+# NET "t3" LOC = "A7";  
+# NET "t2" LOC = "M4";  
+# NET "t1" LOC = "C11"; 
+# NET "t0" LOC = "G12"; 
+
+# ------------------------------------------------------
+# LED y7...y0     1 -> Led an 
+# ------------------------------------------------------
+# NET "y7" LOC = "G1" ; 
+# NET "y6" LOC = "P4" ; 
+# NET "y5" LOC = "N4" ; 
+# NET "y4" LOC = "N5" ; 
+ NET "ya3" LOC = "P6" ; 
+ NET "ya2" LOC = "P7" ; 
+ NET "ya1" LOC = "M11" ; 
+ NET "ya0" LOC = "M5" ;  
+
+
+# ------------------------------------------------------
+# 7-Segment-Anzeigen           0 -> Segment an
+# ------------------------------------------------------
+#       segA                 
+#  segF      segB 
+#       segG  
+#  segE      segC 
+#       segD       dp 
+# ------------------------------------------------------
+# Stellentreiber an3...an0     0 -> Stelle an
+# ------------------------------------------------------
+ NET "ya" LOC = "L14"; 
+ NET "yb" LOC = "H12"; 
+ NET "yc" LOC = "N14"; 
+ NET "yd" LOC = "N11"; 
+ NET "ye" LOC = "P12"; 
+ NET "yf" LOC = "L13"; 
+ NET "yg" LOC = "M12"; 
+ NET "ydp"   LOC = "N13"; 
+
+ NET "ya3" LOC = "K14"; 
+ NET "ya2" LOC = "M13"; 
+ NET "ya1" LOC = "J12"; 
+ NET "ya0" LOC = "F12"; 
+
+# -----------------------------------------------------------
+# Externe Signale 
+#     JA         JB         JC         JD
+# ja3...ja0  jb3...jb0  jc3...jc0  jd3...jd0
+#
+# | DRIVE = 2    treibt 2 mA
+# | PULLUP       Pullup-Wiederstand
+#
+# NET "ja3" LOC = "B2"  | DRIVE = 2  | PULLUP ;   Ausgang 
+# NET "ja3" LOC = "B2"  | PULLUP ;                Eingang 
+# 
+# -----------------------------------------------------------
+
+# Loop Back only tested signals
+# NET "ja3" LOC = "B2"  | DRIVE = 2  | PULLUP ; 
+# NET "ja2" LOC = "A3"  | DRIVE = 2  | PULLUP ; 
+# NET "ja1" LOC = "J3"  | DRIVE = 2  | PULLUP ; 
+# NET "ja0" LOC = "B5"  | DRIVE = 2  | PULLUP ; 
+
+# NET "jb3" LOC = "C6"  | DRIVE = 2  | PULLUP ; 
+# NET "jb2" LOC = "B6"  | DRIVE = 2  | PULLUP ; 
+# NET "jb1" LOC = "C5"  | DRIVE = 2  | PULLUP ; 
+# NET "jb0" LOC = "B7"  | DRIVE = 2  | PULLUP ; 
+
+# NET "jc3" LOC = "A9"  | DRIVE = 2  | PULLUP ; 
+# NET "jc2" LOC = "B9"  | DRIVE = 2  | PULLUP ; 
+# NET "jc1" LOC = "A10" | DRIVE = 2  | PULLUP ; 
+# NET "jc0" LOC = "C9"  | DRIVE = 2  | PULLUP ; 
+
+# NET "jd3" LOC = "C12"  | DRIVE = 2  | PULLUP ; 
+# NET "jd2" LOC = "A13"  | DRIVE = 2  | PULLUP ; 
+# NET "jd1" LOC = "C13"  | DRIVE = 2  | PULLUP ; 
+# NET "jd0" LOC = "D12"  | DRIVE = 2  | PULLUP ;  
+
